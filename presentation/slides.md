@@ -667,3 +667,76 @@
 - [ ] Show reasoning analysis output
 - [ ] Show progress tracking
 - [ ] Have backup screenshots ready
+
+
+
+---
+
+# BONUS SLIDE: IMAGE RECOGNITION FEATURE
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│           📸 NEW FEATURE: UPLOAD YOUR WORK                   │
+├──────────────────────────────────────────────────────────────┤
+│                                                              │
+│   LEARNER WORKFLOW:                                          │
+│                                                              │
+│   1. 📷 Take photo of completed work                        │
+│   2. 📤 Upload via WhatsApp                                 │
+│   3. 🔍 AI analyzes handwriting                             │
+│   4. 🎯 AI spots mistakes                                   │
+│   5. 💡 AI provides Socratic guidance                       │
+│                                                              │
+│   ┌────────────────────────────────────────────────────┐    │
+│   │  Example:                                          │    │
+│   │                                                    │    │
+│   │  Problem: 2x + 5 = 13                             │    │
+│   │  Learner wrote: 2x + 5 + 13 = 18                  │    │
+│   │                                                    │    │
+│   │  AI spots: "You added instead of subtracting!"    │    │
+│   │  AI guides: "What's 'in the way' of x?"          │    │
+│   └────────────────────────────────────────────────────┘    │
+│                                                              │
+│   TECHNOLOGY:                                                 │
+│   • AWS Textract (handwriting recognition)                   │
+│   • Claude 3.5 Sonnet with Vision                           │
+│   • Custom mistake detection algorithms                      │
+│                                                              │
+│   WORKS WITH:                                                │
+│   ✅ Exam papers  ✅ Homework  ✅ Class work                 │
+│                                                              │
+│   "It's like having a teacher look over your shoulder       │
+│    - available 24/7, completely free!"                       │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+```
+
+---
+
+# KEY INSIGHT: Why Image Recognition Matters
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│                                                              │
+│   THE PROBLEM WITH TEXT-ONLY TUTORS:                         │
+│   ─────────────────────────────────────                      │
+│                                                              │
+│   Most learners don't know HOW to ask for help.             │
+│   They just know: "I got it wrong."                          │
+│                                                              │
+│   ❌ Can't explain where they're stuck                       │
+│   ❌ Don't know which step went wrong                        │
+│   ❌ Hard to type math notation                              │
+│                                                              │
+│   ───────────────────────────────────────────────────        │
+│                                                              │
+│   OUR SOLUTION: Just take a photo!                           │
+│   ✅ No typing required                                      │
+│   ✅ AI sees the actual work                                 │
+│   ✅ AI identifies exact mistake location                    │
+│   ✅ Feedback in context                                     │
+│                                                              │
+│   This removes the biggest barrier to getting help!          │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+```
