@@ -841,7 +841,77 @@ for label, cost in costs:
 
 
 # ============================================================
-# SLIDE 14: LIVE DEMO SLIDE
+# SLIDE 14: IMAGE RECOGNITION FEATURE (NEW!)
+# ============================================================
+slide = prs.slides.add_slide(prs.slide_layouts[6])
+add_bg(slide, DARK_BG)
+add_shape_bg(slide, Inches(0), Inches(0), Inches(13.333), Inches(0.15), TEAL)
+
+add_text_box(slide, Inches(0.5), Inches(0.3), Inches(12), Inches(0.7),
+             "📸 IMAGE RECOGNITION FEATURE", font_size=36, color=TEAL, bold=True)
+
+add_text_box(slide, Inches(0.5), Inches(1.0), Inches(12), Inches(0.5),
+             "Upload photos of your work - AI spots mistakes and guides you!",
+             font_size=18, color=GOLD, align=PP_ALIGN.CENTER)
+
+# Left side - How it works
+add_shape_bg(slide, Inches(0.5), Inches(1.7), Inches(5.8), Inches(5.2), ACCENT_BLUE)
+add_text_box(slide, Inches(0.7), Inches(1.8), Inches(5.4), Inches(0.5),
+             "HOW IT WORKS:", font_size=16, color=GREEN, bold=True)
+
+steps = [
+    ("1. 📷", "Take photo of your work", GREEN),
+    ("2. 📤", "Upload via WhatsApp", TEAL),
+    ("3. 🔍", "AI reads handwriting (AWS Textract)", PURPLE),
+    ("4. 👁️", "AI understands math (Claude Vision)", GOLD),
+    ("5. 🎯", "AI spots exact mistake", ORANGE),
+    ("6. 💡", "AI provides Socratic guidance", GREEN),
+]
+
+for i, (icon, desc, color) in enumerate(steps):
+    top = Inches(2.4 + i * 0.7)
+    add_text_box(slide, Inches(0.9), top, Inches(0.8), Inches(0.5),
+                 icon, font_size=16, color=color, bold=True)
+    add_text_box(slide, Inches(1.8), top, Inches(4.2), Inches(0.5),
+                 desc, font_size=14, color=WHITE)
+
+# Right side - Example
+add_shape_bg(slide, Inches(7.0), Inches(1.7), Inches(5.8), Inches(5.2), RGBColor(0x0A, 0x3D, 0x1A))
+add_text_box(slide, Inches(7.2), Inches(1.8), Inches(5.4), Inches(0.5),
+             "EXAMPLE:", font_size=16, color=GOLD, bold=True)
+
+# Mock handwritten work
+add_shape_bg(slide, Inches(7.4), Inches(2.4), Inches(5.0), Inches(1.8), RGBColor(0x2A, 0x2A, 0x2A))
+add_text_box(slide, Inches(7.6), Inches(2.5), Inches(4.6), Inches(1.6),
+             """Problem: 2x + 5 = 13
+
+Learner wrote:
+  Step 1: 2x + 5 + 13 = 18  ❌
+  Step 2: 2x = 18
+  Step 3: x = 9""",
+             font_size=13, color=RGBColor(0xFF, 0xFF, 0xDD))
+
+# AI feedback
+add_text_box(slide, Inches(7.2), Inches(4.4), Inches(5.4), Inches(0.4),
+             "AI FEEDBACK:", font_size=14, color=TEAL, bold=True)
+add_text_box(slide, Inches(7.4), Inches(4.9), Inches(5.0), Inches(1.8),
+             """I see you added 13 and 5! 
+
+Think: What's 'in the way' of x?
+It's that +5.
+
+To remove +5, do we add more
+or use the opposite operation?""",
+             font_size=13, color=WHITE)
+
+# Bottom benefits
+add_shape_bg(slide, Inches(0.5), Inches(6.9), Inches(12.3), Inches(0.5), BRIGHT_BLUE)
+add_text_box(slide, Inches(0.7), Inches(6.95), Inches(11.9), Inches(0.4),
+             "✅ No typing needed  |  ✅ Works with exam papers, homework  |  ✅ Sees actual work context  |  ✅ Available 24/7",
+             font_size=13, color=WHITE, bold=True, align=PP_ALIGN.CENTER)
+
+# ============================================================
+# SLIDE 15: LIVE DEMO SLIDE
 # ============================================================
 slide = prs.slides.add_slide(prs.slide_layouts[6])
 add_bg(slide, RGBColor(0x0A, 0x0A, 0x1A))
@@ -873,7 +943,39 @@ for step in demo_steps:
     p.space_before = Pt(10)
 
 # ============================================================
-# SLIDE 15: IMPACT & METRICS
+# SLIDE 15: LIVE DEMO SLIDE
+# ============================================================
+slide = prs.slides.add_slide(prs.slide_layouts[6])
+add_bg(slide, RGBColor(0x0A, 0x0A, 0x1A))
+add_shape_bg(slide, Inches(0), Inches(0), Inches(13.333), Inches(0.15), GREEN)
+
+add_text_box(slide, Inches(1), Inches(2.0), Inches(11), Inches(1.0),
+             "LIVE DEMO", font_size=64, color=WHITE, bold=True, align=PP_ALIGN.CENTER)
+
+add_text_box(slide, Inches(1), Inches(3.3), Inches(11), Inches(0.8),
+             "Watch the AI Tutor in Action", font_size=28, color=GOLD, align=PP_ALIGN.CENTER)
+
+# What we'll see
+add_shape_bg(slide, Inches(3), Inches(4.3), Inches(7.3), Inches(2.5), ACCENT_BLUE)
+txBox = slide.shapes.add_textbox(Inches(3.3), Inches(4.4), Inches(6.7), Inches(2.3))
+tf = txBox.text_frame
+tf.word_wrap = True
+demo_steps = [
+    "Learner asks for help with a math problem",
+    "AI detects misconception in real-time",
+    "AI guides learner using Socratic method",
+    "Learner solves problem themselves!",
+]
+for step in demo_steps:
+    p = tf.add_paragraph()
+    p.text = f"  {step}"
+    p.font.size = Pt(16)
+    p.font.color.rgb = WHITE
+    p.font.name = 'Segoe UI'
+    p.space_before = Pt(10)
+
+# ============================================================
+# SLIDE 16: IMPACT & METRICS
 # ============================================================
 slide = prs.slides.add_slide(prs.slide_layouts[6])
 add_bg(slide, DARK_BG)
@@ -1174,7 +1276,7 @@ add_text_box(slide, Inches(1), Inches(6.5), Inches(11), Inches(0.5),
 # ============================================================
 # SAVE FILE
 # ============================================================
-output_path = "/projects/sandbox/ai-tutor-sa/presentation/AI_Tutor_SA_Presentation.pptx"
+output_path = "/projects/sandbox/forage-jpmc-swe-task-1/presentation/AI_Tutor_SA_Presentation.pptx"
 prs.save(output_path)
 print(f"\nPresentation saved to: {output_path}")
 print(f"Total slides: {len(prs.slides)}")
